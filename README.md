@@ -1,3 +1,5 @@
+A fork of the dbyola repo for training YOLACT++ on a custom dataset
+
 # **Y**ou **O**nly **L**ook **A**t **C**oefficien**T**s
 ```
     ██╗   ██╗ ██████╗ ██╗      █████╗  ██████╗████████╗
