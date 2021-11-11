@@ -135,7 +135,7 @@ sandwich_dataset = dataset_base.copy({
     'train_info':   './data/sandwich_data/dataset/train_annotations_coco_fixed.json',
 
     'valid_images': './data/sandwich_data/dataset/val/',
-    'valid_info':   './data/sandwich_data/dataset/train_annotations_coco_fixed.json',
+    'valid_info':   './data/sandwich_data/dataset/val_annotations_coco.json',
 
     'has_gt': True,
     'class_names': ('tomato', 'bread', 'mayonnaise', 'lettuce', 'bacon')
