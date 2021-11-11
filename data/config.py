@@ -128,6 +128,19 @@ dataset_base = Config({
     'label_map': None
 })
 
+sandwich_dataset = dataset_base.copy({
+    'name': 'Sandwich Dataset',
+
+    'train_images': './data/sandwich_data/dataset/train/',
+    'train_info':   './data/sandwich_data/dataset/train_annotations_coco_fixed.json',
+
+    'valid_images': './data/sandwich_data/dataset/val/',
+    'valid_info':   './data/sandwich_data/dataset/train_annotations_coco_fixed.json',
+
+    'has_gt': True,
+    'class_names': ('tomato', 'bread', 'mayonnaise', 'lettuce', 'bacon')
+})
+
 coco2014_dataset = dataset_base.copy({
     'name': 'COCO 2014',
     
@@ -415,7 +428,7 @@ fpn_base = Config({
 # ----------------------- CONFIG DEFAULTS ----------------------- #
 
 coco_base_config = Config({
-    'dataset': coco2014_dataset,
+    'dataset': sandwich_dataset,  # Default: coco2014_dataset
     'num_classes': 81, # This should include the background class
 
     'max_iter': 400000,
