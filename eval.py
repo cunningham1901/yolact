@@ -456,6 +456,8 @@ def prep_metrics(ap_data, dets, img, gt, gt_masks, h, w, num_crowd, image_id, de
 
     timer.start('Main loop')
     # Attempting to debug index out of range
+    print("set(classes)=", set(classes))
+    print("set(gt_classes)=", set(gt_classes))
     print("set(classes+gt_classes)=", set(classes + gt_classes))
     for _class in set(classes + gt_classes):
         ap_per_iou = []
