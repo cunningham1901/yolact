@@ -456,9 +456,9 @@ def prep_metrics(ap_data, dets, img, gt, gt_masks, h, w, num_crowd, image_id, de
 
     timer.start('Main loop')
     # Attempting to debug index out of range
-    print("set(classes)=", set(classes))
-    print("set(gt_classes)=", set(gt_classes))
-    print("set(classes+gt_classes)=", set(classes + gt_classes))
+    #print("set(classes)=", set(classes))
+    #print(ß"set(gt_classes)=", set(gt_classes))
+    #print("set(classes+gt_classes)=", set(classes + gt_classes))
     for _class in set(classes + gt_classes):
         ap_per_iou = []
         num_gt_for_class = sum([1 for x in gt_classes if x == _class])
@@ -470,7 +470,7 @@ def prep_metrics(ap_data, dets, img, gt, gt_masks, h, w, num_crowd, image_id, de
                 gt_used = [False] * len(gt_classes)
 
                 #Attempting to debug index out of range
-                print("Attempting eval:470 | iou_type=",iou_type,"iouIdx=",iouIdx,"_class=",_class, "len(ap_data[iou_type])=", len(ap_data[iou_type]), "len(ap_data[iou_type][iouIdx])=", len(ap_data[iou_type][iouIdx]))
+                #print("Attempting eval:470 | iou_type=",iou_type,"iouIdx=",iouIdx,"_class=",_class, "len(ap_data[iou_type])=", len(ap_data[iou_type]), "len(ap_data[iou_type][iouIdx])=", len(ap_data[iou_type][iouIdx]))
                 ap_obj = ap_data[iou_type][iouIdx][_class]
                 ap_obj.add_gt_positives(num_gt_for_class)
 
