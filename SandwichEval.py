@@ -8,16 +8,22 @@
 from yolact import Yolact
 from data import cfg, set_cfg
 
-def evalframe(frame):
+import torch
+import torch.backends.cudnn as cudnn
+
+
+def evalframe(net, frame):
     batch = FastBaseTransform()(frame.unsqueeze(0))
     preds = net(batch)
 
     return preds
 
+
 if __name__ == "__main__":
     # Set up network with sandwich defaults
     set_cfg('yolact_plus_resnet50_config')  # Set config
     torch.set_default_tensor_type('torch.cuda.FloatTensor')  # Setup pytorch cuda
+    cudann.fastest = True
     dataset = None  # Set dataset none
 
     net = Yolact()
@@ -27,4 +33,4 @@ if __name__ == "__main__":
 
     path = '../images_00/0001.png'
     frame = torch.from_numpy(cv2.imread(path)).cuda().float()
-    print(evalframe(frame))
+    print(evalframe(net, frame))
