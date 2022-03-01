@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Set up network with sandwich defaults
     set_cfg('yolact_plus_resnet50_config')  # Set config
     torch.set_default_tensor_type('torch.cuda.FloatTensor')  # Setup pytorch cuda
-    cudann.fastest = True
+    cudnn.fastest = True
     dataset = None  # Set dataset none
 
     net = Yolact()
